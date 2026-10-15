@@ -1,0 +1,7 @@
+{
+  "name": "safestock",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Sistema de cadastro de EPIs em JavaScript",
+  "main": "app.js"
+}
