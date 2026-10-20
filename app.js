@@ -7,6 +7,15 @@ import {
   atualizarEpi,
   excluirEpi,
 } from './controller/epiController.js';
+import {
+  cadastrarFuncionario,
+  listarFuncionarios,
+  buscarFuncionarioPorIndice,
+  atualizarFuncionario,
+  excluirFuncionario,
+  ativarFuncionario,
+  desativarFuncionario,
+} from './controller/funcionarioController.js';
 
 console.log('=== Cadastro de EPIs ===');
 cadastrarEpi('EPI-001', 'Capacete', 'CA-100', 12);
@@ -36,3 +45,31 @@ excluirEpi(2);
 
 console.log('\n=== Listagem final ===');
 listarEpis();
+
+console.log('\n=== Cadastro de funcionários ===');
+cadastrarFuncionario('MAT-001', 'Ana Silva', 'Produção', 'Operadora');
+cadastrarFuncionario('MAT-002', 'Bruno Lima', 'Manutenção', 'Técnico');
+cadastrarFuncionario('MAT-003', 'Carla Souza', 'Expedição', 'Supervisora');
+
+console.log('\n=== Listagem dos funcionários ===');
+listarFuncionarios();
+
+console.log('\n=== Busca de funcionário por índice ===');
+console.log(buscarFuncionarioPorIndice(1));
+
+console.log('\n=== Desativação de funcionário ===');
+desativarFuncionario(1);
+console.log(`Status do funcionário no índice 1: ${buscarFuncionarioPorIndice(1)?.status}`);
+
+console.log('\n=== Ativação de funcionário ===');
+ativarFuncionario(1);
+console.log(`Status do funcionário no índice 1: ${buscarFuncionarioPorIndice(1)?.status}`);
+
+console.log('\n=== Atualização de funcionário ===');
+atualizarFuncionario(0, 'MAT-001', 'Ana Silva Costa', 'Produção', 'Líder de equipe');
+
+console.log('\n=== Exclusão de funcionário ===');
+excluirFuncionario(2);
+
+console.log('\n=== Listagem final dos funcionários ===');
+listarFuncionarios();
